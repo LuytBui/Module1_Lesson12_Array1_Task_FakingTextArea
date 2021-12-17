@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type it</title>
+</head>
+<body>
+<h3>Type something slowly</h3>
+<textarea id="paper" disabled cols="60" rows="10"></textarea>
+
+
+<script>
+    let fakeSentence = 'Người mà em yêu em còn chia tay được theo anh thuốc lá đã là gì?\n' +
+        'Thì chẳng qua em đang chưa muốn thôi anh, anh đâu cần quan tâm làm gì?';
+    let content = "";
+    let charCount = 0;
+    window.addEventListener('keydown', pressOnce);
+    // document.getElementById('paper').addEventListener('keydown', pressOnce);
+
+    function pressOnce() {
+        content += fakeSentence[charCount];
+        document.getElementById('paper').innerText = content;
+        charCount++;
+        if (charCount >= fakeSentence.length) {
+            charCount = 0;
+            content = "";
+        }
+    }
+
+</script>
+</body>
+</html>
